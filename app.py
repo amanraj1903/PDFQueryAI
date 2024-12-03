@@ -46,11 +46,12 @@ def input_pdf_setup(uploaded_file):
 st.set_page_config(page_title="PDF_QueryAI")
 st.header("Query your documents using AI")
 uploaded_file = st.file_uploader("Upload your document(pdf format)",type=["pdf"])
+if uploaded_file is not None:
+    st.write("Document Uploaded Successfully")
 input_text=st.text_area("Your Query: " ,key="input") #JD input
 
 
-if uploaded_file is not None:
-    st.write("Document Uploaded Successfully")
+
     
 submit1 = st.button("Search")
 
